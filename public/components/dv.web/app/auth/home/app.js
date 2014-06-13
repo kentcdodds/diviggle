@@ -20,4 +20,10 @@ angular.module('dv.web').config(function($stateProvider, StateUtilsProvider) {
     templateUrl: StateUtilsProvider.templates.home + '/MainHomeCtrl/MainHomeCtrl.html',
     controller: 'MainHomeCtrl'
   });
+
+  $stateProvider.state('root.auth.home.story', {
+    url: '/:user1/:user2',
+    templateUrl: StateUtilsProvider.templates.home + '/StoryCtrl/StoryCtrl.html',
+    controller: 'StoryCtrl'
+  });
 });

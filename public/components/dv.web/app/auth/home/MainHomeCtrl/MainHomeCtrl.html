@@ -5,7 +5,7 @@
   <div class="row">
     Start a new one with one of the people below:
     <div class="users-list">
-      <div ng-repeat="user in loggedInUsers" class="margin-top-medium">
+      <div ng-repeat="user in loggedInUsers" class="margin-top-medium" ui-sref="root.auth.home.story({user1: currentUser.id, user2: user.id})">
         <span dv-avatar="user"></span>
         <span>{{user.displayName}}</span>
       </div>
