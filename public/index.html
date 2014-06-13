@@ -1,0 +1,92 @@
+
+<!-- This file is generated from index.jade--><!DOCTYPE html>
+<html lang="en" ng-app="dv.web" ng-controller="MainCtrl" ng-class="{'auth': authenticated, 'anon': !authenticated, 'small-screen': smallScreen}">
+  <head>
+    <!-- create global DV object-->
+    <script>
+      window.DV = {};
+      window.DV.BASE_URL = 'http://localhost:8000/';
+      window.DV.FBAPI = 'https://diviggle.firebaseio.com/';
+      window.DV.onDev = true;
+    </script>
+    <script>console.log('on development');</script>
+    <script>
+      (function() {
+        var htmlElement = document.getElementsByTagName('html')[0];
+        var background = 'components/dv.common/images/login-backgrounds/bg' + Math.floor(Math.random() * 19) + '.jpg';
+        htmlElement.style.background = 'url("' + background + '") no-repeat center center fixed';
+        htmlElement.style['background-size'] = 'cover';
+      })();
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title ng-bind="title">Diviggle</title>
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- load stylsheets-->
+    <link rel="stylesheet" href="/non_bower_components/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/bower_components/toastr/toastr.min.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <!-- load critical scripts-->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/non_bower_components/MinFaker.js"></script>
+  </head>
+  <body>
+    <div ui-view></div>
+    <!-- load other scripts-->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/lodash/dist/lodash.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/toastr/toastr.min.js"></script>
+    <script src="/bower_components/firebase/firebase.js"></script>
+    <script src="/bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/non_bower_components/Scope.SafeApply.min.js"></script>
+    <script src="/bower_components/angularfire/angularfire.js"></script>
+    <script src="/components/dv.common/constants/app.js"></script>
+    <script src="/components/dv.common/constants/RandomWords.js"></script>
+    <script src="/components/dv.common/constants/TestData.js"></script>
+    <script src="/components/dv.common/services/app.js"></script>
+    <script src="/components/dv.common/services/AlertEventBroadcaster.js"></script>
+    <script src="/components/dv.common/services/AuthService.js"></script>
+    <script src="/components/dv.common/services/LoginState.js"></script>
+    <script src="/components/dv.common/services/MediaQueryService.js"></script>
+    <script src="/components/dv.common/services/UtilFunctions.js"></script>
+    <script src="/components/dv.common/services/UtilService.js"></script>
+    <script src="/components/dv.common/filters/app.js"></script>
+    <script src="/components/dv.common/filters/dvDate.js"></script>
+    <script src="/components/dv.common/filters/dvDayOfWeek.js"></script>
+    <script src="/components/dv.common/filters/dvPhone.js"></script>
+    <script src="/components/dv.common/directives/app.js"></script>
+    <script src="/components/dv.common/directives/dv-autofocus.js"></script>
+    <script src="/components/dv.common/directives/dv-custom-validation.js"></script>
+    <script src="/components/dv.common/directives/dv-dynamic-input-name.js"></script>
+    <script src="/components/dv.common/directives/dv-input-match.js"></script>
+    <script src="/components/dv.common/directives/dv-select-all-on-focus.js"></script>
+    <script src="/components/dv.common/directives/dv-special-input.js"></script>
+    <script src="/components/dv.common/app.js"></script>
+    <script src="/components/dv.web/constants/app.js"></script>
+    <script src="/components/dv.web/directives/app.js"></script>
+    <script src="/components/dv.web/directives/dv-avatar-cluster.js"></script>
+    <script src="/components/dv.web/directives/dv-avatar.js"></script>
+    <script src="/components/dv.web/directives/dv-input-validation.js"></script>
+    <script src="/components/dv.web/directives/dv-model-display.js"></script>
+    <script src="/components/dv.web/directives/dv-table.js"></script>
+    <script src="/components/dv.web/services/app.js"></script>
+    <script src="/components/dv.web/services/AlertService.js"></script>
+    <script src="/components/dv.web/services/CommonModalService.js"></script>
+    <script src="/components/dv.web/services/ErrorDisplayService.js"></script>
+    <script src="/components/dv.web/services/StateUtils.js"></script>
+    <script src="/components/dv.web/app.js"></script>
+    <script src="/components/dv.web/app/MainCtrl.js"></script>
+    <script src="/components/dv.web/app/anon/login/LoginCtrl.js"></script>
+    <script src="/components/dv.web/app/anon/login/app.js"></script>
+    <script src="/components/dv.web/app/auth/home/HomeCtrl.js"></script>
+    <script src="/components/dv.web/app/auth/home/MainHomeCtrl/MainHomeCtrl.js"></script>
+    <script src="/components/dv.web/app/auth/home/app.js"></script>
+    <script src="/components/dv.web/app/auth/home/dv-nav-bar.js"></script>
+    <script src="/components/dv.web/app/auth/home/dv-side-bar.js"></script>
+    <script src="/one-off/long-errors.js"></script>
+  </body>
+</html>

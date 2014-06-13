@@ -1,0 +1,72 @@
+.dv-table-container
+  .table-wrapper
+    margin-bottom 40px
+    .row
+      .filter-block
+        .add-item
+          float right
+          padding 4px 14px
+          margin-left 20px
+        .item-search
+          float right
+          margin 0
+          width 45%
+          max-width 240px
+    .row.table-row-wrapper
+      margin 0
+      .table
+        margin-bottom 0
+        tr
+          &:first-child
+            td
+              border-top 0 none
+          td
+            vertical-align middle
+            font-size 13px
+            img.avatar
+              margin-right 10px
+              max-width 45px
+              top 8px
+              & + .col-value
+                display inline-block
+                margin-top 14px
+            a.name
+              color #3389d1
+              display block
+              font-weight 600
+              font-size 14px
+              margin 15px 0 0 0
+            .subtext
+              font-size 12px
+              margin-left 0
+              color #778391
+              font-style italic
+              margin-top 0
+            .item-actions
+              font-size 1.5em
+              float right
+              i
+                margin-right 20px
+      .no-results-text
+        font-size 1.5em
+        color #888
+        text-align center
+        margin-top 60px
+
+
+html.small-screen
+  .dv-table-container
+    .table-wrapper
+      .filter-block
+        float none
+        .add-item
+          margin-top 0
+        .item-search
+          float left
+          margin 0
+          width 55%
+      .row.table-row-wrapper
+        .table
+          .item-actions
+            i
+              margin-right 0

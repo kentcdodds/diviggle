@@ -1,0 +1,1 @@
+angular.module('dv.web.directives', []);

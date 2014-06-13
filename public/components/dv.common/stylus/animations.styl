@@ -1,0 +1,22 @@
+animate-height(height, speed)
+  overflow-y hidden
+  transition max-height linear speed
+  &.ng-enter
+    max-height 0
+    &.ng-enter-active
+      max-height height
+  &.ng-leave
+    max-height height
+    &.ng-leave-active
+      max-height 0
+
+animate-opacity(speed)
+  transition opacity linear speed
+  &.ng-enter
+    opacity 0
+    &.ng-enter-active
+      opacity 1
+  &.ng-leave
+    opacity 1
+    &.ng-leave-active
+      opacity 0

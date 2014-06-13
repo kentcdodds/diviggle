@@ -1,0 +1,1 @@
+angular.module('dv.common.directives', ['dv.common.services']);

@@ -1,0 +1,43 @@
+/*
+ * margins & paddings
+ */
+for size in ('0' 0) (xxsmall 6) (xsmall 12) (small 18) (medium 24) (large 30) (xlarge 36) (xxlarge 42)
+  for type in 'margin' 'padding'
+    .{type}-{size[0]}
+      {type} size[1]px
+    .{type}-horizontal-{size[0]}
+      {type}-left size[1]px
+      {type}-right size[1]px
+    .{type}-vertical-{size[0]}
+      {type}-top size[1]px
+      {type}-bottom size[1]px
+
+    for side in 'top' 'right' 'bottom' 'left'
+      .{type}-{side}-{size[0]}
+        {type}-{side} size[1]px
+
+/*
+ *
+ * Other
+ *
+ */
+
+iterateTypes(types, prop)
+  for type in types
+    .{prop}-{type}
+      {prop} type
+
+iterateTypes(middle top bottom, vertical-align)
+iterateTypes(inline inline-block block none table-cell table-row, display)
+iterateTypes(absolute relative fixed, position)
+iterateTypes(none, float)
+
+
+.clear-both
+  clear both
+
+.height-100
+  height 100%
+
+.width-100
+  width 100%

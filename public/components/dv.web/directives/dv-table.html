@@ -1,0 +1,57 @@
+<div class="dv-table-container">
+  <div class="table-wrapper">
+    <div class="row">
+      <div class="title-block col-md-6">
+        <h3 ng-hide="noTitle">{{::tableTitle}}</h3>
+      </div>
+      <div class="filter-block col-md-6">
+        <a ng-if="::!noAddButton" class="btn-flat success add-item" ng-click="onAddButtonClicked()">{{::buttonText}}</a>
+        <input type="text" class="search item-search" placeholder="Search {{::pluralItemName}}..." ng-model="itemSearch" ng-change="updateVisibleCount()" />
+      </div>
+    </div>
+
+    <div class="row table-row-wrapper">
+      <table class="table table-hover" ng-show="items.length && visibleItemCount">
+        <thead>
+          <tr>
+            <th ng-repeat="column in columns" class="col-md-{{::column.size}}">
+              <span class="line" ng-if="::$index !== 0 && column.name"></span>{{::column.name}}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in items | filter: itemSearch | orderBy:orderings[0].name:orderings[0].reverse | orderBy:orderings[1].name:orderings[1].reverse | orderBy:orderings[2].name:orderings[2].reverse"
+              class="hover-parent-2 {{noRowAction ? '' : 'cursor-pointer'}}" ng-click="onRowClick(item)">
+            <td ng-repeat="column in ::columns">
+              <span ng-if="::!column.isActions">
+                <img ng-if="::column.field.imgProp" ng-src="{{::item[column.field.imgProp]}}" alt="avatar" class="img-circle avatar" />
+                <i ng-if="::column.field.iconProp" class="{{::item[column.field.iconProp]}}"></i>
+                <span class="col-value" ng-switch="column.type" ng-if="column.field.name">
+                  <span ng-switch-when="date">{{::item[column.field.name] | dvDate: column.dateFormat}}</span>
+                  <span ng-switch-when="day">{{::item[column.field.name] | dvDayOfWeek}}</span>
+                  <span ng-switch-default>{{::item[column.field.name]}}</span>
+                </span>
+              </span>
+              <span ng-if="::column.isActions" class="hover-only-2 item-actions">
+                <i ng-repeat="action in ::column.actions"
+                   class="fa {{::action.icon}} cursor-pointer {{::action.cssClass}}"
+                   ng-click="doAction($event, item, action.action)"
+                  >
+                </i>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="no-results-text" ng-show="!items.length || (!visibleItemCount && items.length)">
+        <div ng-hide="items.length">
+          <span>Looks like there are no {{::pluralItemName}} for you here right now.</span>
+          <span ng-if="!noAddButton">Why don't you <a ng-click="onAddButtonClicked()">make a new {{::itemName}}</a>?</span>
+        </div>
+        <div ng-hide="visibleItemCount || !items.length">
+          No {{::pluralItemName}} match {{itemSearch}}...
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

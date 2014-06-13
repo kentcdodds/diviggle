@@ -1,0 +1,25 @@
+<div class="dv-nav-bar-container">
+  <header class="navbar navbar-inverse" role="banner">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" ng-click="toggleNavigation($event)">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand" ui-sref="root.auth.home">
+        <strong>Diviggle</strong>
+      </a>
+    </div>
+    <ul class="nav navbar-nav pull-right hidden-xs">
+      <li class="profile hidden-xs hidden-sm">
+        <a ui-sref="root.auth.home.profile" role="button">
+          {{::currentUser.displayName}}
+        </a>
+      </li>
+      <li class="sign-out hidden-xs hidden-sm">
+        <a ui-sref="root.logout" role="button">
+          <i class="fa fa-sign-out"></i>
+        </a>
+      </li>
+    </ul>
+  </header>
+</div>

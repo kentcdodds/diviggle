@@ -1,0 +1,39 @@
+// This file is generated from index.jade
+doctype html
+html(lang="en", ng-app="dv.web", ng-controller="MainCtrl", ng-class="{'auth': authenticated, 'anon': !authenticated, 'small-screen': smallScreen}")
+  head
+    // create global DV object
+    script.
+      window.DV = {};
+      window.DV.BASE_URL = '#{BASE_URL}';
+      window.DV.FBAPI = '#{FBAPI}';
+      window.DV.onDev = #{onDev};
+    if onDev
+      script.
+        console.log('on development');
+    script.
+      (function() {
+        var htmlElement = document.getElementsByTagName('html')[0];
+        var background = 'components/dv.common/images/login-backgrounds/bg' + Math.floor(Math.random() * 19) + '.jpg';
+        htmlElement.style.background = 'url("' + background + '") no-repeat center center fixed';
+        htmlElement.style['background-size'] = 'cover';
+      })();
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    title(ng-bind="title") Diviggle
+    meta(name="viewport", content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
+    // load stylsheets
+    for href in stylesheets
+      link(rel="stylesheet", href="#{resourcePrefix}#{href}")
+
+    // load critical scripts
+    for script in topScripts
+      script(src="#{resourcePrefix}#{script}")
+
+  body
+    div(ui-view)
+
+    // load other scripts
+    for script in scripts
+      script(src="#{resourcePrefix}#{script}")

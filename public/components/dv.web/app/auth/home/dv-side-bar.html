@@ -1,0 +1,16 @@
+<div class="dv-side-bar-container">
+  <div id="sidebar-nav">
+    <ul id="dashboard-menu">
+      <li ng-repeat="option in menuOptions" ng-class="{'active': option.isActive, 'visible-xs visible-sm': option.narrowOnly}">
+        <a ui-sref="{{option.sref}}">
+          <div class="pointer" ng-if="option.isActive">
+            <div class="arrow"></div>
+            <div class="arrow_border"></div>
+          </div>
+          <i class="fa fa-{{option.icon}}"></i>
+          <span>{{option.name}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

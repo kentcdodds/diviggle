@@ -1,0 +1,37 @@
+html
+  &.anon
+    background url(imgLocation + "login-backgrounds/bg0.jpg") no-repeat center center fixed
+    background-size cover
+    body
+      background-color transparent
+
+html, body
+  height 100%
+
+*, *:active, *:focus, *:visited, *:hover
+  outline none !important // I hate outlines...
+
+.ng-cloak
+  display none
+
+// need to specify this for those anchors without an href attribute
+a, input[type=checkbox]
+  cursor pointer
+
+.cursor-pointer
+  cursor pointer
+
+html.small-screen
+  [class^="icon-"], [class*=" icon-"],
+  [class^="fa-"], [class*=" fa-"]
+    font-size 30px
+
+for layer in 1 .. 4
+  html:not(.small-screen)
+    .hover-parent-{layer}
+      .hover-only-{layer}
+        opacity 0
+        transition opacity 0.2s
+      &:hover
+        .hover-only-{layer}
+          opacity 1

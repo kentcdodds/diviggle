@@ -1,0 +1,14 @@
+<div>
+  <div class="row">
+    <h1>Welcome to Diviggle <small>What's your next story?</small></h1>
+  </div>
+  <div class="row">
+    Start a new one with one of the people below:
+    <div class="users-list">
+      <div ng-repeat="user in loggedInUsers" class="margin-top-medium">
+        <span dv-avatar="user"></span>
+        <span>{{user.displayName}}</span>
+      </div>
+    </div>
+  </div>
+</div>

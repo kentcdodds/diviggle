@@ -1,0 +1,13 @@
+transSpeed = .75s
+.dv-input-validation-container
+  position relative
+  .error-label
+    position absolute
+    opacity 0
+    top 0
+    left 0
+    transition opacity transSpeed, top transSpeed
+    &.visible
+      transition opacity transSpeed, top transSpeed
+      top -18px
+      opacity 1

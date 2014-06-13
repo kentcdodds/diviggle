@@ -1,0 +1,11 @@
+<div class="dv-model-display-container">
+  <div ng-repeat="field in ::fields" ng-if="::!isHidden(field)" class="field-wrapper">
+    <label>{{::field.label}}:</label>
+    <img ng-if="::getFieldImgValue(field)" ng-src="{{::getFieldImgValue(field)}}" class="img-circle">
+    <div ng-switch="::getFieldType(field)" class="value-wrapper">
+      <span ng-switch-when="span">{{::getFieldValue(field)}}</span>
+      <span ng-switch-when="date">{{::getFieldValue(field) | dvDate}}</span>
+      <div ng-switch-default>{{::getFieldValue(field)}}</div>
+    </div>
+  </div>
+</div>

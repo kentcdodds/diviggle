@@ -1,0 +1,16 @@
+<div class="modal-errors-more-info">
+  <div class="modal-header">
+    <h3><ng-pluralize count="errors.length"
+                      when="{'0': 'No errors',
+                     'one': 'One Error',
+                     'other': '{} Errors'}"></ng-pluralize></h3>
+  </div>
+  <div class="modal-body font-size-large">
+    <ul>
+      <li ng-repeat="error in errors">{{error}}</li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <button class="btn-flat white" ng-click="$close()">Close</button>
+  </div>
+</div>

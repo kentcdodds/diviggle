@@ -1,0 +1,19 @@
+for size in (.7 xxsmall) (.8 xsmall) (.9 small) (1 medium) (1.5 large) (2 xlarge) (3 xxlarge) (4 xxlarge)
+  .font-size-{size[1]}
+    font-size size[0]em
+
+  .font-size-{size[1]}-2x
+    font-size (size[0]*2)em
+
+
+for alignment in center end inherit initial justify left right start
+  .text-align-{alignment}
+    text-align alignment
+
+for type in none underline
+  .text-decoration-{type}
+    text-decoration type
+
+a.text-decoration-none,
+a.text-decoration-none:hover
+  text-decoration none
