@@ -60,7 +60,7 @@ module.exports = function(env) {
     topScripts: topScripts,
     stylesheets: styles,
     scripts: scripts,
-    resourcePrefix: '/diviggle/'
+    resourcePrefix: '/diviggle/public/'
   };
   if (/local/.test(env)) {
     data.onDev = true;
