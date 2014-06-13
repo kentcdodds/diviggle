@@ -55,7 +55,7 @@ module.exports = function(env) {
 
   var data = {
     onDev: false,
-    BASE_URL: 'http://kent.doddsfamily.us/diviggle/',
+    BASE_URL: 'http://kent.doddsfamily.us/diviggle/public/',
     FBAPI: 'https://diviggle.firebaseio.com/',
     topScripts: topScripts,
     stylesheets: styles,
