@@ -55,17 +55,18 @@ module.exports = function(env) {
 
   var data = {
     onDev: false,
-    BASE_URL: 'http://www.diviggle.com/',
+    BASE_URL: 'http://kent.doddsfamily.us/diviggle/',
     FBAPI: 'https://diviggle.firebaseio.com/',
     topScripts: topScripts,
     stylesheets: styles,
     scripts: scripts,
-    resourcePrefix: '/'
+    resourcePrefix: '/diviggle/'
   };
   if (/local/.test(env)) {
     data.onDev = true;
     data.BASE_URL = 'http://localhost:8000/';
     data.FBAPI = 'https://diviggle.firebaseio.com/';
+    data.resourcePrefix = '/';
     scripts.push('one-off/long-errors.js');
   }
 

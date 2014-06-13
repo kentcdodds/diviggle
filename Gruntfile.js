@@ -47,7 +47,7 @@ module.exports = function(grunt) {
       local: {
         options: {
           data: function() {
-            return require('./jade/getIndexData')('local');
+            return require('./jade/getIndexData')();
           },
           pretty: true
         },
